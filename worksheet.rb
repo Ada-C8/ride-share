@@ -1,19 +1,25 @@
 ########################################################
 # Step 1: Establish the layers
 
-  # Write a list of the layers here
+  # 1. The overall structure is an array called "rides"
+  # 2. The value of each index in this array is a hash. This hash pairs "headers" with the data for a particular ride. For example, :driver_id is a key, and the driver's id for that ride is a value. 
 
 ########################################################
 # Step 2: Assign a data structure to each layer
 
-  # Copy your list from above, and write what data structure each layer should have
+  # See above: this is an array of hashes - [{}, {}, {}]
 
 ########################################################
 # Step 3: Make the data structure!
 
-    # Setup the data strcture and manually write in data presented in rides.csv
+    # See ride-share.rb
 
 ########################################################
-# Step 4: Total Divers Earnings and Number of Rides
+# Step 4: Total Drivers Earnings and Number of Rides
 
-  # Use an iteration block to print driver's total rides and money made
+  # The output when you run ride-share.rb: 
+
+  # The driver with ID# DR0001 gave 3 rides and made $85. Their average rating was 3.0
+  # The driver with ID# DR0002 gave 3 rides and made $75. Their average rating was 3.0
+  # The driver with ID# DR0003 gave 2 rides and made $55. Their average rating was 3.5
+  # The driver with ID# DR0004 gave 3 rides and made $35. Their average rating was 4.66
