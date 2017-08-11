@@ -118,7 +118,7 @@ driver_id.each do |id, rides_total_arr|
   rides_total_arr.each do |index|
     rating_total = rating_total + index[:rating]
   end
-  puts "Average rating: #{(rating_total / rides_total_arr.length * 10).round / 10.0} stars"
+  puts "Average rating: #{(rating_total / rides_total_arr.length).round(1)} stars"
   
   puts
   puts "-" * 20
