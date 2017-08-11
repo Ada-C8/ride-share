@@ -28,19 +28,19 @@
 driver_IDs = { #Hash with all driver IDs (key) and their individial rides (value)
   DR0001: [ #Array that contains all rides
     { #Each ride's info
-      date: "3RD FEB 2016",
+      date: "3rb Feb 2016",
       cost: 10,
       rider_ID: "RD0022",
       rating: 5
     },
     {
-      date: "3RD FEB 2016",
+      date: "3rd Feb 2016",
       cost: 30,
       rider_ID: "RD0015",
       rating: 4
     },
     {
-      date: "5TH FEB 2016",
+      date: "5th Feb 2016",
       cost: 45,
       rider_ID: "RD0003",
       rating: 2
