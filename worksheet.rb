@@ -82,7 +82,7 @@ drivers.each do |driver, rides|
   pay = 0
   ratings = []
   count = 0
-  # loop through each ride in the rides array and calculate the pay and ride count, and save ratings in  an array
+  # loop through each ride in the rides array and calculate the pay and ride count, and save ratings in an array
   rides.each do |ride|
     pay += ride[:cost]
     ratings.push(ride[:rating])
@@ -98,5 +98,5 @@ drivers.each do |driver, rides|
   avg_rating = (sum.to_f/ratings.length).round(1)
 
   # display requested information
-  puts "Driver #{driver.to_s} has provided #{count} rides and earned $#{pay}. Their average rating ia #{avg_rating}"
+  puts "Driver #{driver.to_s} has provided #{count} rides and earned $#{pay}. Their average rating is #{avg_rating}."
 end
