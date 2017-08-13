@@ -211,17 +211,20 @@
   # Created an empty array to store the cost of each ride. for the following loop.
   driver_info.each do |driver_id, rides|
     costs_array = []
+    rating_array = []
     # puts "#{driver_id}"
 
   # Rides.each is accessing the values of the hash and iterating through each of them to pull the cost and push it to the costs_array above.
     rides.each do |ride|
       costs_array << ride[:cost]
+      rating_array << ride[:rating].to_f
     end
 
     # summing the contents of the cost_array and pushing it to the cost_array so that it can be interpolated with driver_id and rides.length.
     # As we are iterating through rides we can call .length on it and it will tell us how many indices are in the array as the array is the value from the key-value pair.
     total_money = costs_array.sum
+    average_rating = rating_array.sum / rating_array.length
 
-    puts "Driver #{driver_id} completed #{rides.length} rides and made $#{total_money}."
+    puts "Driver #{driver_id} completed #{rides.length} rides and made $#{total_money}. This drivers average rating is #{average_rating.round(2)}"
 
   end
