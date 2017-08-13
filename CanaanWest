@@ -1,0 +1,146 @@
+########################################################
+
+
+# Step 1: Establish the layers
+
+#Drivers >> ID, Rides >> Riders >> Stats types >> Values
+
+########################################################
+# Step 2: Assign a data structure to each layer
+
+
+#the largest data structure will be an array with a hash for each driver.
+#Driver ID to be like the "title" of each hash, value will be the string
+#Have an array of riders.
+#Each rider gets a hash within the array of riders
+#In the hash, we have rider ID and stats for the rider; cost:, rating:, date:
+
+########################################################
+# Step 3: Make the data structure!
+
+
+
+drivers =
+
+[
+  #driver 1
+  {
+    driver_id: "DR0001",
+    riders:
+    [
+      { #rider 1
+        rider_id: "RD0003",
+        date: "3 Feb 2016",
+        rating: 3,
+        cost: 10,
+      },
+
+      { # rider 2
+        rider_id: "RD0003",
+        date: "5 Feb 2016",
+        rating: 2,
+        cost: 45,
+      },
+      { #rider 3
+        rider_id: "RD0015",
+        date: "3 Feb 2016",
+        rating: 4,
+        cost: 30,
+      }
+    ] #closes rides
+  }, #closes driver 1
+
+
+
+  #NEW DRIVER 2
+  {
+    driver_id: "DR0002",
+    riders:
+    [
+      {#rider 1
+        rider_id: "RD0073",
+        date: "3 Feb 2016",
+        rating: 5,
+        cost: 25
+      },
+
+      {#rider2
+        rider_id: "RD0013",
+        date: "4 Feb 2016",
+        rating: 1,
+        cost: 15
+      },
+
+      { #rider3
+        rider_id: "RD0066",
+        date: "5 Feb 2016",
+        rating: 3,
+        cost: 35
+      }
+    ]
+  },
+
+  #NEW DRIVER 3
+  {
+    driver_id: "DR0003",
+    riders:
+    [
+      {
+        rider_id: "RD0066",
+        date: "4 Feb 2016",
+        rating: 5,
+        cost: 5
+      },
+      {
+        rider_id: "RD0003",
+        date: "5 Feb 2016",
+        rating: 2,
+        cost: 50
+      },
+    ]
+  },
+
+  #driver number 4
+  {
+    driver_id: "DR0004",
+    riders:
+    [
+      { #rider 1
+        rider_id: "RD0022",
+        date: "3 Feb 2016",
+        rating: 5,
+        cost: 5
+      },
+      { #rider 2
+        rider_id: "RD0022",
+        date: "4 Feb 2016",
+        rating: 4,
+        cost: 10
+      },
+
+      { #rider 3
+        rider_id: "RD0073",
+        date: "5 Feb 2016",
+        rating: 5,
+        cost: 20
+      }
+    ]
+  }
+]
+
+########################################################
+# Step 4: Total Divers Earnings and Number of Rides
+
+drivers.each do |driver_hash|
+    earnings = 0
+    ratings = 0
+  driver_hash[:riders].each do |rider|
+      earnings += rider[:cost]
+      ratings += rider[:rating]
+    end
+    puts "Driver #{driver_hash[:driver_id]} earned #{earnings} and gave #{driver_hash[:riders].length} rides"
+    average_rating = ratings / driver_hash[:riders].length.to_f
+    puts "This driver's average rating was #{average_rating.round(2)}"
+end
+
+
