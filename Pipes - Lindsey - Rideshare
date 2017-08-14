@@ -1,0 +1,77 @@
+driver_hash = {
+                :DR0001 => [
+                            {:date => 'Feb 3rd 2016',
+                             :cost => 10,
+                             :rider_id => 'RD0003',
+                             :rating => 3
+                            },
+                            {:date => 'Feb 3rd 2016',
+                             :cost => 30,
+                             :rider_id => 'RD0015',
+                             :rating => 4
+                            },
+                            {:date => 'Feb 5th 2016',
+                             :cost => 45,
+                             :rider_id => 'RD0003',
+                             :rating => 2
+                            }
+                            ],
+                :DR0002 => [
+                            {:date => 'Feb 3rd 2016',
+                             :cost => 25,
+                             :rider_id => 'RD0073',
+                             :rating => 5
+                            },
+                            {:date => 'Feb 4th 2016',
+                             :cost => 15,
+                             :rider_id => 'RD0013',
+                             :rating => 1
+                            },
+                            {:date => 'Feb 5th 2016',
+                             :cost => 35,
+                             :rider_id => 'RD0066',
+                             :rating => 3
+                            }
+                            ],
+                :DR0003 => [
+                            {:date => 'Feb 4th 2016',
+                             :cost => 5,
+                             :rider_id => 'RD0066',
+                             :rating => 5
+                            },
+                            {:date => 'Feb 5th 2016',
+                             :cost => 50,
+                             :rider_id => 'RD0003',
+                             :rating => 2
+                            }
+                            ],
+                :DR0004 => [
+                            {:date => 'Feb 3rd 2016',
+                             :cost => 5,
+                             :rider_id => 'RD0022',
+                             :rating => 5
+                            },
+                            {:date => 'Feb 4th 2016',
+                             :cost => 10,
+                             :rider_id => 'RD0022',
+                             :rating => 4
+                            },
+                            {:date => 'Feb 5th 2016',
+                             :cost => 20,
+                             :rider_id => 'RD0073',
+                             :rating => 5
+                            }
+                            ],
+
+}
+
+#this pulls each driver, and the array of rides for each driver
+driver_hash.each do |driver, rides|
+  total_earnings = 0
+  #this will iterate over the rides array and look
+  #at each ride hash individually
+  rides.each do |single_ride|
+    total_earnings += single_ride[:cost]
+  end
+  puts "Driver #{driver} made $#{total_earnings} and took #{rides.length} rides."
+end
