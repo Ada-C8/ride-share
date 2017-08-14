@@ -60,7 +60,7 @@ end
 drivers = Array.new
 
 rides.each do |ride|
-  drivers << {driver_id: ride[:driver_id], cost: 0, ride_count: 0}
+  drivers << {driver_id: ride[:driver_id], cost: 0, ride_count: 0, rating: 0}
 end
 
 drivers = drivers.uniq!
@@ -69,15 +69,16 @@ rides.each do |ride|
   drivers.each do |driver|
     if driver[:driver_id] == ride[:driver_id]
       driver[:cost] += ride[:cost].to_i
+      driver[:rating] += ride[:rating].to_i
       driver[:ride_count] += 1
     end
   end
 end
 
-4.times do |i| # This method of ordering is brittle for more driver ids...
+drivers.length.times do |i|
   drivers.each do |driver|
-    if i + 1 == driver[:driver_id][5].to_i
-      puts "Driver #{driver[:driver_id]} made $#{driver[:cost]} in #{driver[:ride_count]} rides."
+    if i + 1 == driver[:driver_id][2..5].to_i
+      puts "Driver #{driver[:driver_id]} made $#{driver[:cost]} in #{driver[:ride_count]} rides (Avg. Rating: #{(driver[:rating] / driver[:ride_count].to_f).round(1)})"
     end
   end
 end
