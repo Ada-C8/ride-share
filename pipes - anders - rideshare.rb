@@ -1,6 +1,25 @@
+########################################################
+# Step 1: Establish the layers
+
+  # Write a list of the layers here
+
+# There will be 3 layers => 1) hash => 2) arrays (values in hash), 3) hash(es) (elements in arrays)  
 # hash = {key: value [{},{},{}]}
-# hash --- array ---- hash
-# drivers ---- rides ---- ride info
+
+########################################################
+# Step 2: Assign a data structure to each layer
+
+  # Copy your list from above, and write what data structure each layer should have
+
+# 1) hash => driver's ids as keys
+# 2) arrays (value of hash) => all ride information for each driver as values 
+# 3) hash(es) (as elements in array) => storing information of each individual ride
+# all_data = {drivers_id: [{ride1_date: ""}, {ride1_cost: 0}, {ride1_rider_id: ""}, {ride1_rating: 0]}
+
+########################################################
+# Step 3: Make the data structure!
+
+    # Setup the data strcture and manually write in data presented in rides.csv
 
 rides = {
   "DR0001" => [
@@ -24,6 +43,13 @@ rides = {
   ]
 }
 
+########################################################
+# Step 4: Total Divers Earnings and Number of Rides
+
+  # Use an iteration block to print driver's total rides and money made
+  # If you have time, also display what the drivers average rating is
+
+# method to output final result
 def output(driver_id, total_rides, earning, ave_rating)
   puts "===== Driver #{driver_id} ====="
   puts "Total rides: #{total_rides} rides"
@@ -35,20 +61,18 @@ end
 rides.each do | driver_id, all_ride_info |
   total_rides = all_ride_info.length
 
-  # keep track of earnings, ratings, and number of ratings for each driver
+  # keep track of earnings and ratings
   earning = 0
-  total_rating = 0
-  rides = 0
+  rating = 0
 
-  # loop through second level array (to find info for each driver)
+  # loop through second level array (to find earnings and ratings for each driver)
   all_ride_info.each do | ind_ride |
-    earning += ind_ride[:cost]
-    total_rating += ind_ride[:rating]
-    rides += 1 # keep track of number of ratings
+    earning += ind_ride[:cost]  # add to total earnings
+    rating += ind_ride[:rating] # add to total ratings
   end
 
   # find average rating
-  ave_rating = total_rating / rides.to_f
+  ave_rating = rating / total_rides.to_f
 
   # call final_output
   final_output = output(driver_id, total_rides, earning, ave_rating)
