@@ -38,10 +38,10 @@ end
 
 #make data structure
 
- driver_info = [driver_1, driver_2, driver_3, driver_4]
+driver_info = [driver_1, driver_2, driver_3, driver_4]
 
 puts driver_info
 
- driver_info.each_with_index do |hash, index|
+driver_info.each_with_index do |hash, index|
    earnings_drive_count(hash, index + 1)
  end
