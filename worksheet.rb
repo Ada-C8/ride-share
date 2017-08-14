@@ -120,6 +120,7 @@ driver_IDs.each do |id, rides_list|
     total += ride[:cost]
     avg_rating += ride[:rating]
   end
+  puts "Number of Rides Given: #{rides_list.length}"
   puts "Total: $#{total}"
   puts "Average Rating: #{'%.2f' % (avg_rating / rides_list.length)}\n\n"
 end
