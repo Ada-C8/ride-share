@@ -13,8 +13,6 @@ Layer One: Drivers -- Hash with Driver ID's as keys and Rides (next layer) as va
 Layer Two: Rides -- Array containing all the rides for the Driver. 
 Layer Three: Ride Specifics (Date, Cost, Riders, Rating) -- Hash with Date/Cost/Rider/Rating as the keys and the specific information for each ride as the values. 
 
-  # Copy your list from above, and write what data structure each layer should have
-  Hash for the Drivers 
 
 ########################################################
 # Step 3: Make the data structure!
